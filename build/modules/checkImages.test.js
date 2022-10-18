@@ -57,7 +57,7 @@ describe('your test', function () {
         .mockImplementation(function () { return mockFilesInput['/path/to']; });
     test('your test description', function () {
         // do something that calls the genName function
-        expect(checkImages_1.checkIfImagesExist(200, 400)).toStrictEqual({
+        expect((0, checkImages_1.checkIfImagesExist)(200, 400)).toStrictEqual({
             inputFiles: ['image1.jpg'],
             outputFiles: ['image1.jpg', '.DS_Store'],
             unResized: ['image1.jpg']

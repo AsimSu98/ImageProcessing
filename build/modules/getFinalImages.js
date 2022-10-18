@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.finalImages = void 0;
 var fs_1 = __importDefault(require("fs"));
 var finalImages = function (width, height, outputPath) {
-    var subStringToTarget = "_" + width + "_" + height;
+    var subStringToTarget = "_".concat(width, "_").concat(height);
     var outputFiles = fs_1.default.readdirSync(outputPath);
     return outputFiles.filter(function (file) {
         return subStringToTarget === file.substring(file.indexOf('_'), file.indexOf('.'));

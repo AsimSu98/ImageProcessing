@@ -8,12 +8,12 @@ var fs_1 = __importDefault(require("fs"));
 var utils_1 = require("../utils/utils");
 var checkIfImagesExist = function (width, height) {
     var unResized = [];
-    var _a = utils_1.imagesPath(__dirname), inputPath = _a.inputPath, outputPath = _a.outputPath;
+    var _a = (0, utils_1.imagesPath)(__dirname), inputPath = _a.inputPath, outputPath = _a.outputPath;
     var outputFiles = fs_1.default.readdirSync(outputPath);
     var inputFiles = fs_1.default.readdirSync(inputPath);
-    inputFiles = utils_1.clearnFiles(inputFiles);
+    inputFiles = (0, utils_1.clearnFiles)(inputFiles);
     inputFiles.forEach(function (file) {
-        var thumbnailFile = utils_1.createThumbnailName(file, width, height);
+        var thumbnailFile = (0, utils_1.createThumbnailName)(file, width, height);
         if (!outputFiles.includes(thumbnailFile)) {
             unResized.push(file);
         }

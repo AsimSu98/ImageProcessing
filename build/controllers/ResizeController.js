@@ -46,7 +46,7 @@ var utils_1 = require("../utils/utils");
 var checkImages_1 = require("../modules/checkImages");
 var getFinalImages_1 = require("../modules/getFinalImages");
 var transformImage_1 = __importDefault(require("../modules/transformImage"));
-exports.ResizeController = express_1.Router();
+exports.ResizeController = (0, express_1.Router)();
 exports.ResizeController.get('/resize', function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, h, w, width, height, _b, inputPath, outputPath, noParams, noImagesError, finalOutputFiles, unResized, format, _i, unResized_1, file, inputImage, thumbnailFile, thumbnailFilePath, e_1;
     return __generator(this, function (_c) {
@@ -55,7 +55,7 @@ exports.ResizeController.get('/resize', function (req, res, next) { return __awa
                 _a = req.query, h = _a.h, w = _a.w;
                 width = w ? parseInt(w, 10) : null;
                 height = h ? parseInt(h, 10) : null;
-                _b = utils_1.imagesPath(__dirname), inputPath = _b.inputPath, outputPath = _b.outputPath;
+                _b = (0, utils_1.imagesPath)(__dirname), inputPath = _b.inputPath, outputPath = _b.outputPath;
                 noParams = false;
                 noImagesError = false;
                 finalOutputFiles = [];
@@ -63,7 +63,7 @@ exports.ResizeController.get('/resize', function (req, res, next) { return __awa
                 noParams = true;
                 return [3 /*break*/, 9];
             case 1:
-                unResized = checkImages_1.checkIfImagesExist(width, height).unResized;
+                unResized = (0, checkImages_1.checkIfImagesExist)(width, height).unResized;
                 if (!(unResized.length > 0)) return [3 /*break*/, 8];
                 _c.label = 2;
             case 2:
@@ -75,9 +75,9 @@ exports.ResizeController.get('/resize', function (req, res, next) { return __awa
                 if (!(_i < unResized_1.length)) return [3 /*break*/, 6];
                 file = unResized_1[_i];
                 inputImage = path_1.default.join(inputPath, file);
-                thumbnailFile = utils_1.createThumbnailName(file, width, height);
+                thumbnailFile = (0, utils_1.createThumbnailName)(file, width, height);
                 thumbnailFilePath = path_1.default.join(outputPath, thumbnailFile);
-                return [4 /*yield*/, transformImage_1.default(inputImage, thumbnailFilePath, format, width, height)];
+                return [4 /*yield*/, (0, transformImage_1.default)(inputImage, thumbnailFilePath, format, width, height)];
             case 4:
                 _c.sent();
                 _c.label = 5;
@@ -91,7 +91,7 @@ exports.ResizeController.get('/resize', function (req, res, next) { return __awa
                 console.log('Error occured while processing image');
                 return [3 /*break*/, 8];
             case 8:
-                finalOutputFiles = getFinalImages_1.finalImages(width, height, outputPath);
+                finalOutputFiles = (0, getFinalImages_1.finalImages)(width, height, outputPath);
                 if (unResized.length < 1 && finalOutputFiles.length < 1) {
                     noImagesError = true;
                 }

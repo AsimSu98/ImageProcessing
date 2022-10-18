@@ -11,10 +11,7 @@
     "lint-fix": "eslint . --ext .ts --fix",
     "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Eyongkevin/Udacity-Image-Processing-API.git"
-  },
+  
   "keywords": [
     "Nodejs",
     "typescript",
@@ -24,12 +21,7 @@
     "prettier",
     "eslint"
   ],
-  "author": "Eyong Kevin Enowanyo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Eyongkevin/Udacity-Image-Processing-API/issues"
-  },
-  "homepage": "https://github.com/Eyongkevin/Udacity-Image-Processing-API#readme",
+  
   "devDependencies": {
     "@types/express": "^4.17.9",
     "@types/jest": "^26.0.20",
@@ -50,7 +42,7 @@
     "supertest": "^6.0.1",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+    "typescript": "^4.8.4"
   },
   "dependencies": {
     "@types/sharp": "^0.27.1",

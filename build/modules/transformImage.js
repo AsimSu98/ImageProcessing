@@ -12,7 +12,7 @@ function resize(inputPath, outputPath, format, width, height) {
             var writeStream = fs_1.default.createWriteStream(outputPath);
             writeStream.on('error', function () { return console.log('Error'); });
             writeStream.on('close', function () { return console.log('Successfully saved'); });
-            var transform = sharp_1.default();
+            var transform = (0, sharp_1.default)();
             if (format === 'jpeg' || format === 'png') {
                 transform = transform.toFormat(format);
             }

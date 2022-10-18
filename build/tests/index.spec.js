@@ -39,22 +39,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IndexController = void 0;
-var express_1 = require("express");
-var fs_1 = __importDefault(require("fs"));
-var utils_1 = require("../utils/utils");
-exports.IndexController = (0, express_1.Router)();
-var inputPath = (0, utils_1.imagesPath)(__dirname).inputPath;
-exports.IndexController.get('/', function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var inputFiles;
-    return __generator(this, function (_a) {
-        inputFiles = fs_1.default.readdirSync(inputPath);
-        inputFiles = (0, utils_1.clearnFiles)(inputFiles);
-        res.status(200);
-        res.render('index', {
-            data: inputFiles
+var supertest_1 = __importDefault(require("supertest"));
+var index_1 = __importDefault(require("../index"));
+// create a request object
+var request = (0, supertest_1.default)(index_1.default);
+describe('Test endpoint response', function () {
+    it('test hello world endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get('/')];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(200);
+                    return [2 /*return*/];
+            }
         });
-        return [2 /*return*/];
-    });
-}); });
-//# sourceMappingURL=IndexController.js.map
+    }); });
+});
+//# sourceMappingURL=index.spec.js.map

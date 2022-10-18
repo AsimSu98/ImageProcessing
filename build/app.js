@@ -10,14 +10,14 @@ var routes_1 = require("./routes");
 var logger_1 = require("./middleware/logger");
 var pageNotFound404_middleware_1 = require("./middleware/pageNotFound404.middleware");
 // Get expess
-exports.app = express_1.default();
+exports.app = (0, express_1.default)();
 exports.app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 exports.app.set('views', path_1.default.resolve(__dirname, 'views'));
 exports.app.set('view engine', 'ejs');
 // logger middleware
 exports.app.use(logger_1.morganMiddleware);
 // Routing
-routes_1.routes(exports.app);
+(0, routes_1.routes)(exports.app);
 // page not found middleware
 exports.app.use(pageNotFound404_middleware_1.pageNotFound404);
 //# sourceMappingURL=app.js.map

@@ -47,7 +47,7 @@ describe('Test IndexController', function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default(app_1.app).get('/').send()];
+                case 0: return [4 /*yield*/, (0, supertest_1.default)(app_1.app).get('/').send()];
                 case 1:
                     result = _a.sent();
                     expect(result.status).toBe(200);

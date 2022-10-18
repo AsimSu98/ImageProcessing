@@ -26,7 +26,7 @@ var clearnFiles = function (files) {
 exports.clearnFiles = clearnFiles;
 var createThumbnailName = function (file, width, height) {
     var _a = file.split('.'), filename = _a[0], ext = _a[1];
-    return filename + "_" + width + "_" + height + "." + ext;
+    return "".concat(filename, "_").concat(width, "_").concat(height, ".").concat(ext);
 };
 exports.createThumbnailName = createThumbnailName;
 //# sourceMappingURL=utils.js.map
